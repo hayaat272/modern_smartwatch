@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse — Digital Smartwatch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">P</span><span>PULSE<span class="brand-dot">.</span></span></a>
+      <div class="top-right"><span class="live-dot"></span><span>DEVICE CONNECTED</span><span class="top-divider"></span><span id="topDate">--</span></div>
+    </header>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL DASHBOARD</p>
+        <h1>Time, in <span>your hands.</span></h1>
+        <p class="subheading">A little overview of your day. Stay focused, stay in motion.</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span id="themeIcon">☾</span><span id="themeLabel">Dark mode</span></button>
+    </section>
+
+    <section class="dashboard">
+      <article class="watch-card">
+        <div class="watch-top"><span class="watch-label"><i></i> PULSE WATCH / 01</span><span class="watch-menu">•••</span></div>
+        <div class="watch-face">
+          <div class="face-ring"></div>
+          <div class="face-content">
+            <div class="face-day" id="faceDay">WEDNESDAY, NOV 04</div>
+            <div class="digital-time" id="clock">09:24<span>:00</span></div>
+            <div class="face-bottom"><span>◉  <b id="faceWeather">--°</b></span><span class="face-battery">▰ <b id="faceBattery">--%</b></span></div>
+          </div>
+          <div class="face-glow"></div>
+        </div>
+        <div class="watch-footer"><span>MODEL <b>PX-01 ULTRA</b></span><span>SOFTWARE <b>2.6.1</b></span></div>
+      </article>
+
+      <div class="right-column">
+        <article class="time-card panel">
+          <div class="panel-heading"><span>LOCAL TIME</span><span class="tiny-icon">◷</span></div>
+          <div class="large-time" id="fullTime">09:24:00</div>
+          <div class="date-line" id="fullDate">Wednesday, November 4, 2026</div>
+          <div class="time-progress"><span id="minuteProgress"></span></div>
+          <div class="progress-label"><span>TIME IS MOVING</span><span id="secondsLabel">00 SECONDS</span></div>
+        </article>
+        <div class="stat-grid">
+          <article class="stat-card panel heart">
+            <div class="stat-head"><span>HEART RATE</span><span class="stat-icon">♥</span></div>
+            <div class="stat-value"><span id="heartRate">72</span><small>BPM</small></div>
+            <div class="mini-chart"><svg viewBox="0 0 220 42" preserveAspectRatio="none"><path d="M0 24 L22 24 L32 20 L41 29 L51 7 L62 35 L72 23 L91 23 L102 19 L111 26 L121 12 L132 31 L142 23 L164 23 L175 17 L185 28 L195 10 L207 25 L220 23" /></svg></div>
+            <p class="stat-note">Demo reading · not a sensor</p>
+          </article>
+          <article class="stat-card panel steps">
+            <div class="stat-head"><span>DAILY STEPS</span><span class="stat-icon">⌁</span></div>
+            <div class="stat-value"><span id="steps">6,842</span></div>
+            <div class="step-track"><span style="width:68.42%"></span></div>
+            <p class="stat-note"><b>68%</b> of 10,000 goal</p>
+          </article>
+          <article class="stat-card panel battery">
+            <div class="stat-head"><span>BATTERY</span><span class="stat-icon">▰</span></div>
+            <div class="stat-value"><span id="battery">86</span><small>%</small></div>
+            <div class="battery-track"><span id="batteryBar"></span></div>
+            <p class="stat-note">Estimated device level</p>
+          </article>
+          <article class="stat-card panel weather">
+            <div class="stat-head"><span>WEATHER</span><span class="stat-icon">☼</span></div>
+            <div class="weather-main"><span class="weather-symbol">☀</span><div class="stat-value"><span id="temperature">--</span><small>°C</small></div></div>
+            <p class="stat-note" id="weatherStatus">Weather unavailable</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel activity-card">
+        <div class="section-heading"><div><p class="eyebrow">MOVE A LITTLE</p><h2>Daily activity</h2></div><span class="activity-tag">TODAY</span></div>
+        <div class="activity-content">
+          <div class="activity-ring"><div class="ring-inner"><strong>68<span>%</span></strong><small>GOAL</small></div></div>
+          <div class="activity-details">
+            <div><span class="activity-bullet mint"></span><p><b>6,842</b><small>Steps taken</small></p></div>
+            <div><span class="activity-bullet violet"></span><p><b>4.8 km</b><small>Distance covered</small></p></div>
+            <div><span class="activity-bullet orange"></span><p><b>248 kcal</b><small>Active calories</small></p></div>
+          </div>
+        </div>
+      </article>
+      <article class="panel quick-card">
+        <div class="section-heading"><div><p class="eyebrow">MAKE IT COUNT</p><h2>Quick actions</h2></div></div>
+        <div class="action-list">
+          <button class="action-button" id="addSteps"><span class="action-symbol mint-bg">＋</span><span><b>Add 500 steps</b><small>Update activity demo</small></span><span class="action-arrow">↗</span></button>
+          <button class="action-button" id="resetSteps"><span class="action-symbol violet-bg">↺</span><span><b>Reset activity</b><small>Start a fresh day</small></span><span class="action-arrow">↗</span></button>
+        </div>
+      </article>
+    </section>
+    <footer><span>© 2026 PULSE DIGITAL</span><span>DESIGNED TO KEEP YOU IN FLOW <b>✳</b></span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
